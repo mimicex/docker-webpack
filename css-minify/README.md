@@ -2,5 +2,19 @@
 
 安裝
 ```
-npm i cssnano-webpack-plugin
+npm install css-loader mini-css-extract-plugin -D
+
+```
+require plugin
+```
+CssnanoPlugin = require('cssnano-webpack-plugin')
+```
+設定壓縮條件
+```
+optimization: {
+    minimizer: [
+        new CssnanoPlugin()
+    ]
+}
+
 ```

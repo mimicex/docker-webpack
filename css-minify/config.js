@@ -1,4 +1,6 @@
-const path = require('path')
+const path          = require('path'),
+      CssnanoPlugin = require('cssnano-webpack-plugin')
+
 module.exports = {
     entry: "./src/style.scss",
     output: {
@@ -16,5 +18,11 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: '[name].css'
         })
-    ]
+    ],
+    mode: "development",
+    optimization: {
+        minimizer: [
+            new CssnanoPlugin()
+        ]
+    }
 }
